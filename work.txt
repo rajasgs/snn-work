@@ -1,0 +1,25 @@
+SNN work:
+
+https://docx.riversand.com/docs/ml-based-match-create-threshold-match-score-merge-threshold
+
+expected configutations?
+	NER Run Config
+	Get Entities
+		api/entityappservice/get
+	matchservice
+		api/matchservice/search
+
+
+Postman:
+
+
+
+SNN Model training:
+
+	api/configurationservice/get - 
+		check if it is available
+
+			typesCriterion
+
+	party match profile
+		/api/configurationservice/create
