@@ -1,10 +1,5 @@
 {
-  "metaInfo": {
-    "dataIndex": "config",
-    "collectionName": "configObjects",
-    "responseObjectName": "response"
-  },
-  "configObjects": [
+  "configObject": 
     {
       "id": "rj2023_matchConfig",
       "name": "rj2023",
@@ -63,5 +58,4 @@
         }
       }
     }
-  ]
 }
