@@ -1,0 +1,153 @@
+{
+    "request": {
+        "returnRequest": false,
+        "requestId": "7b8a8f21-9c23-4f9b-8277-7eb889e87fbf",
+        "maxRecords": 2000,
+        "taskId": "7b8a8f21-9c23-4f9b-8277-7eb889e87fbf"
+    },
+    "response": {
+        "configObjects": [
+            {
+                "id": "rj2023_party_matchProfile",
+                "name": "rj2023_party_matchProfile",
+                "type": "matchProfile",
+                "properties": {
+                    "createdService": "configurationManageService",
+                    "createdBy": "system_user",
+                    "modifiedService": "configurationManageService",
+                    "modifiedBy": "system_user",
+                    "createdDate": "2023-08-03T01:52:08.257-0500",
+                    "modifiedDate": "2023-08-03T01:52:08.257-0500"
+                },
+                "data": {
+                    "jsonData": {
+                        "algorithms": {
+                            "CDS": "combinedDistanceSequential",
+                            "OMP": "overlapMetaphone",
+                            "RAT": "ratcliff",
+                            "JLV": "jaccardLevenshtein",
+                            "SOR": "sorensen",
+                            "OLV": "overlapLevenshtein",
+                            "JMP": "jaccardMetaphone"
+                        },
+                        "familyRules": [
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "SOR"
+                                ],
+                                "name": "system_businessname"
+                            },
+                            {
+                                "algorithms": [
+                                "EXT"
+                                ],
+                                "name": "system_region"
+                            },
+                            {
+                                "algorithms": [
+                                "EXT"
+                                ],
+                                "name": "system_country"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "SOR"
+                                ],
+                                "name": "system_alternatename"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "SOR"
+                                ],
+                                "name": "system_street"
+                            },
+                            {
+                                "algorithms": [
+                                    "EXT"
+                                ],
+                                "name": "system_house"
+                            },
+                            {
+                                "algorithms": [
+                                    "EXT"
+                                ],
+                                "name": "system_suite"
+                            },
+                            {
+                                "algorithms": [
+                                    "SOR"
+                                ],
+                                "name": "system_region"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "SOR"
+                                ],
+                                "name": "system_city"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "RAT"
+                                ],
+                                "name": "system_zipcode"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "RAT"
+                                ],
+                                "name": "system_universalbusinessnumber"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "RAT"
+                                ],
+                                "name": "system_segmentcode"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV"
+                                ],
+                                "name": "system_email"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV"
+                                ],
+                                "name": "system_personname"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV"
+                                ],
+                                "name": "system_uniqueid"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "RAT"
+                                ],
+                                "name": "system_phone"
+                            },
+                            {
+                                "algorithms": [
+                                    "OLV",
+                                    "RAT"
+                                ],
+                                "name": "system_phonenumber"
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "status": "success",
+        "totalRecords": 1
+    }
+}
