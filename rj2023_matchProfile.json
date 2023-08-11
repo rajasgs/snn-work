@@ -1,0 +1,178 @@
+{
+    "metaInfo": {
+      "dataIndex": "config",
+      "collectionName": "configObjects",
+      "responseObjectName": "response"
+    },
+    "configObjects": [
+      {
+        "id": "rj2023_matchProfile",
+        "name": "rj2023_matchProfile",
+        "type": "matchProfile",
+        "data": {
+          "jsonData": {
+            "domain": "party",
+            "subdomain": "b2b",
+            "isMatchProfileScopingEnabled": false,
+            "matchProfileScopeAttribute": "businessType",
+            "matchRules": [
+              {
+                "matchType": "probabilistic",
+                "matchSequence": 1,
+                "probabilisticSettings": {
+                  "matchThreshold": {
+                    "max_result": 5,
+                    "probability": 0.7
+                  },
+                  "thresholdRange": {
+                    "high": 90,
+                    "medium": 80,
+                    "low": 0
+                  },
+                  "modelids": {
+                    "active": [
+                      "rj2023_mlTrainConfig"
+                    ],
+                    "inactive": []
+                  },
+                  "familyRules": [
+                    {
+                      "name": "system_businessname",
+                      "sourceAttributes": [
+                        "orgname"
+                      ],
+                      "standardization": [
+                        {
+                          "sequence": 1,
+                          "function": "OrgNameCleanser",
+                          "corpusids": [
+                            "c9f620d7-8572-4773-a9e6-17f57868a148",
+                            "df591118-d15f-4c26-9ff9-f39e182fd5d7",
+                            "719d314d-3fb7-40ef-adae-0040c92517cf"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": "system_address",
+                      "standardization": [
+                        {
+                          "sequence": 1,
+                          "corpusids": [
+                            "c9f620d7-8572-4773-a9e6-17f57868a148",
+                            "e1ce49dc-45ad-4b9c-aa97-22721abc0315",
+                            "ef080efb-fc7a-41d3-8863-e9d680540004"
+                          ],
+                          "function": "AddressCleanser",
+                          "sampleInput": "thomas Kurian",
+                          "sampleOutput": "."
+                        }
+                      ],
+                      "sourceAttributes": [
+                        "otheraddressstreet",
+                        "otheraddresscity"
+                      ]
+                    },
+                    {
+                      "name": "system_country",
+                      "standardization": [
+                        {
+                          "sequence": 1,
+                          "corpusids": [
+                            "c9f620d7-8572-4773-a9e6-17f57868a148"
+                          ],
+                          "function": "RegexCleanser",
+                          "sampleInput": "D-UBS-1234-ADSFG",
+                          "sampleOutput": "DUBS1234ADSFG"
+                        }
+                      ],
+                      "sourceAttributes": [
+                        "address/otheraddressstate",
+                        "address/otheraddresscountry"
+                      ]
+                    },
+                    {
+                      "name": "system_zipcode",
+                      "standardization": [
+                        {
+                          "sequence": 1,
+                          "corpusids": [
+                            "c9f620d7-8572-4773-a9e6-17f57868a148"
+                          ],
+                          "function": "RegexCleanser",
+                          "sampleInput": "BG!5600-78#",
+                          "sampleOutput": "BG560078"
+                        }
+                      ],
+                      "sourceAttributes": [
+                        "address/otheraddresszipcode"
+                      ]
+                    },
+                    {
+                      "name": "system_city",
+                      "sourceAttributes": [
+                        "city"
+                      ],
+                      "standardization": [
+                        {
+                          "sequence": 1,
+                          "function": "AddressCleanser",
+                          "corpusids": [
+                            "c9f620d7-8572-4773-a9e6-17f57868a148"
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                        "name": "system_region",
+                        "sourceAttributes": [
+                          "state"
+                        ],
+                        "standardization": [
+                          {
+                            "sequence": 1,
+                            "function": "AddressCleanser",
+                            "corpusids": [
+                              "c9f620d7-8572-4773-a9e6-17f57868a148"
+                            ]
+                          }
+                        ]
+                      }
+                  ]
+                }
+              }
+            ],
+            "searchCriteria": [
+              {
+                "blockingStrategy": [
+                  {
+                    "strategy": [
+                      "system_universalbusinessnumber",
+                      "system_phonenumber"
+                    ]
+                  },
+                  {
+                    "strategy": [
+                      "system_alternatename",
+                      "system_businessname"
+                    ]
+                  },
+                  {
+                    "strategy": [
+                      "system_address"
+                    ]
+                  },
+                  {
+                    "strategy": [
+                      "system_zipcode",
+                      "system_country"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
