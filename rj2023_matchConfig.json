@@ -37,6 +37,19 @@
                   "OLV",
                   "SOR"
                 ],
+                "name": "system_city"
+              },
+              {
+                "algorithms": [
+                  "EXT"
+                ],
+                "name": "system_region"
+              },
+              {
+                "algorithms": [
+                  "OLV",
+                  "SOR"
+                ],
                 "name": "system_alternatename"
               },
               {
@@ -48,8 +61,7 @@
               },
               {
                 "algorithms": [
-                  "OLV",
-                  "SOR"
+                  "EXT"
                 ],
                 "name": "system_country"
               },
